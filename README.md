@@ -19,7 +19,6 @@ Please find Install section below in order to find out how to install **Virtualb
 
 ### Instructions HOW to install `Virtualbox`
 - Go to [Virtualbox downloads](https://www.virtualbox.org/wiki/Linux_Downloads) choose **Virtualbox** package
-
 - Type in your terminal: `sudo apt-get install -y virtualbox `
 
 ### Instructions HOW to install `Vagrant`
@@ -35,10 +34,6 @@ Please find Install section below in order to find out how to install **Virtualb
 
 
 ## TODO
-
-### Vagrant project
-- Create vagrant project
-- check refferance vagrant project https://github.com/kikitux/xenial-docker
 
 ### Packer project
 - build docker image with nginx
