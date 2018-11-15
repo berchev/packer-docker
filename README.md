@@ -4,6 +4,7 @@ This is a packer repository that builds docker image
 ## Files:
 - `Vagrantfile` - Contain vagrant box configuration
 - `scripts/provision.sh` - this script will install the needed software for our vagrant box(**Packer** and **Docker**)
+- `nginx.json` - file which Packer use in order to create our Docker Image
 
 ## Requiered software:
 
@@ -30,13 +31,13 @@ Please find Install section below in order to find out how to install **Virtualb
 - Change to downloaded **packer-docker** directory: `cd packer-docker`
 - Type `vagrant up` and wait the command to finish
 - Type `vagrant ssh` and you will be connected to newly created machine with installed **Packer** and **Docker** on it.
-
+- Change to /vagrant directory: `cd /vagrant`
+- Type on your terminal: `packer build nginx.json` and the result will be `packer-nginx:1.0` Image.
 
 
 ## TODO
 
-### Packer project
-- build docker image with nginx
-
+- push the image to docker hub
+- use kitchen-docker to test the docker box - ie nginx is installed
 
 ## DONE
