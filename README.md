@@ -1,5 +1,5 @@
 # packer-docker
-This is a packer repository that builds docker image
+This is a packer repository that builds docker image and the push it to the Docker Hub
 
 ## Files:
 - `Vagrantfile` - Contain vagrant box configuration
@@ -34,10 +34,11 @@ Please find Install section below in order to find out how to install **Virtualb
 - Change to /vagrant directory: `cd /vagrant`
 - Type on your terminal: `packer build nginx64.json` and the result will be `nginx64:1.10.3` Image.
 
+### Instructions HOW to push your Docker Image **nginx64:1.10.3** to the Docker Hub
+- You need to create account in [Docker Cloud]( https://cloud.docker.com/). It requires `username`, `e-mail` and `password`
+- After you create account please follow the steps described [here](https://docs.docker.com/docker-cloud/builds/push-images/), in order to push your image to Docker Cloud
 
 ## TODO
-
-- push the image to docker hub
 - use kitchen-docker to test the docker box - ie nginx is installed
 
 ## DONE
