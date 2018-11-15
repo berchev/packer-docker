@@ -4,7 +4,7 @@ This is a packer repository that builds docker image
 ## Files:
 - `Vagrantfile` - Contain vagrant box configuration
 - `scripts/provision.sh` - this script will install the needed software for our vagrant box(**Packer** and **Docker**)
-- `nginx.json` - file which Packer use in order to create our Docker Image
+- `nginx64.json` - file which Packer use in order to create our Docker Image
 
 ## Requiered software:
 
