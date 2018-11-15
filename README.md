@@ -32,7 +32,7 @@ Please find Install section below in order to find out how to install **Virtualb
 - Type `vagrant up` and wait the command to finish
 - Type `vagrant ssh` and you will be connected to newly created machine with installed **Packer** and **Docker** on it.
 - Change to /vagrant directory: `cd /vagrant`
-- Type on your terminal: `packer build nginx.json` and the result will be `packer-nginx:1.0` Image.
+- Type on your terminal: `packer build nginx64.json` and the result will be `nginx64:1.10.3` Image.
 
 
 ## TODO
