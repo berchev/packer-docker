@@ -21,7 +21,7 @@
       {
         "type": "docker-tag",
         "repository": "nginx64",
-        "tag": "1.10.3v0.1"
+        "tag": "1.10.3"
       }
     ]
   ]
