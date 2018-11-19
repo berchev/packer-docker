@@ -1,0 +1,18 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: shell 
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu
+    driver_config:
+      image: nginx64:1.10.3
+      platform: ubuntu
+
+suites:
+  - name: default
