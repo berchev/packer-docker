@@ -5,6 +5,9 @@ This is a packer repository that builds docker image and the push it to the Dock
 - `Vagrantfile` - Contain vagrant box configuration
 - `scripts/provision.sh` - this script will install the needed software for our vagrant box(**Packer** and **Docker**)
 - `nginx64.json` - file which Packer use in order to create our Docker Image
+- `Gemfile` - Specify the the ruby version, and all gems needed for **Kitchen** test
+- `.kitchen.yml` - **Kitchen** configuration file
+- `test/integration/default/check_pkg.rb` - Script needed to **Kitchen** in order to test whether nginx is installed on your box. 
 
 ## Requiered software:
 
@@ -38,7 +41,26 @@ Please find Install section below in order to find out how to install **Virtualb
 - You need to create account in [Docker Cloud]( https://cloud.docker.com/). It requires `username`, `e-mail` and `password`
 - After you create account please follow the steps described [here](https://docs.docker.com/docker-cloud/builds/push-images/), in order to push your image to Docker Cloud
 
-## TODO
-- use kitchen-docker to test the docker box - ie nginx is installed
+### Prepare your environment for **kitchen** testing
+- Get inside into **packer-docker** directory and type `vagrant ssh` in order to login on vagrant VM (this step is only applicable if you logged out from vagrant VM)
+- Type: `sudo apt-get install rbenv ruby-dev ruby-bundler`
+- Create .bash_profile for vagrant user: `vi ~/.bash_profile`
+- Type **i**, in order to get into insert mode. 
+- Add the following lines: 
+  ```
+  eval "$(rbenv init -)"
+  true
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  ```
+- Press `ESC`, then `:wq`, in order to exit from vi editor and saving the changes you made.
+- Type in your terminal `. ~/.bash_profile` in order to apply the changes made in .bash_profile
+- Change to the directory `/vagrant`, where `Gemfile` is located and type: `bundle install` in order to install all needed gems for the test
 
-## DONE
+### Test your box with **kitchen** after creation:
+- Type: `bundle exec kitchen list` to list the environment
+- Type: `bundle exec kitchen converge` to build environment with kitchen
+- Type: `bundle exec kitchen verify` to test the created kitchen environment
+- Type: `bundle exec kitchen destroy` in order to destroy the created kitchen environment
+- Type: `bundle exec kitchen test` in order to do steps from 3 to 5 in one command
+
+## TODO
